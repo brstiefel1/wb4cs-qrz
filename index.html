@@ -171,7 +171,8 @@
   .gear-row .v .sub{color:var(--ink-dim); font-size:14px;}
 
   /* ---------- Photo grid ---------- */
-  .photos{margin-top:22px; display:grid; grid-template-columns:1.3fr 1fr; gap:20px;}
+  /* ★ CHANGED — was: grid-template-columns:1.3fr 1fr;  now fixed px so shack grows without shrinking antenna */
+  .photos{margin-top:22px; display:grid; grid-template-columns:424px 284px; gap:20px;}
   .photo figure{margin:0;}
   .photo img{width:100%; height:auto; display:block; border:1px solid var(--rule);}
   .photo figcaption{
@@ -181,7 +182,8 @@
     color:var(--ink-dim);
     line-height:1.5;
   }
-  @media (max-width:560px){
+  /* ★ CHANGED — breakpoint raised from 560px to 820px so the wider fixed-width row still stacks cleanly on mid-size screens */
+  @media (max-width:820px){
     .photos{grid-template-columns:1fr;}
   }
 
@@ -300,7 +302,8 @@
   </div>
 </section>
 
-<section class="wrap">
+<!-- ★ CHANGED — added inline style="max-width:780px;" so this section is wide enough for the bigger fixed-width photos -->
+<section class="wrap" style="max-width:780px;">
   <h2>Shack &amp; Antenna</h2>
   <div class="photos">
     <div class="photo">
@@ -317,6 +320,7 @@
     </div>
   </div>
 </section>
+
 
 <section class="wrap">
   <h2>Awards &amp; Certificates</h2>
