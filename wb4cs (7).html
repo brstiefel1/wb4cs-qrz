@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WB4CS — Brandon, Huntsville AL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1b2a;
+    --bg-panel:#122438;
+    --ink:#eef2f5;
+    --ink-dim:#93a7ba;
+    --accent:#e8a33d;
+    --accent-dim:#c98a2e;
+    --teal:#5fb3a3;
+    --rule:#24405a;
+    --maxw:720px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-dim);}
+  a:hover{color:var(--teal); border-color:var(--teal);}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  h1,h2,h3{font-family:'Zilla Slab', serif; font-weight:700; margin:0; color:var(--ink);}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:64px 0 28px; border-bottom:1px solid var(--rule);}
+  .hero .callsign{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:clamp(44px, 9vw, 64px);
+    letter-spacing:0.01em;
+    color:var(--ink);
+  }
+  .hero .callsign .accent-dot{color:var(--accent);}
+  .hero-media{
+    display:flex;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:20px;
+  }
+  .hero .portrait{
+    height:200px;
+    width:auto;
+    display:block;
+    border:1px solid var(--rule);
+  }
+  .hero-media .on-air{
+    width:480px;
+    height:200px;
+    overflow:hidden;
+    border:1px solid var(--rule);
+  }
+  .hero-media .on-air iframe{
+    display:block;
+    width:600px;
+    height:250px;
+    border:0;
+    transform:scale(0.8);
+    transform-origin:top left;
+  }
+  .hero .tagline{
+    margin-top:8px;
+    font-size:18px;
+    color:var(--ink-dim);
+  }
+  .hero .tagline strong{color:var(--ink); font-weight:500;}
+  .hero .loc{
+    margin-top:2px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--teal);
+  }
+
+  /* band scale */
+  .band-scale{margin-top:32px;}
+  .band-scale .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--ink-dim);
+    margin-bottom:10px;
+  }
+  .band-scale .track{
+    display:flex;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+  }
+  .band-scale .tick{
+    flex:1;
+    text-align:center;
+    padding:10px 2px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-dim);
+    border-right:1px solid var(--rule);
+  }
+  .band-scale .tick:last-child{border-right:none;}
+  .band-scale .tick.active{color:var(--accent); font-weight:500;}
+
+/* modes */
+  .modes{margin-top:32px;}
+  .modes .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--ink-dim);
+    margin-bottom:10px;
+  }
+  .modes .track{
+    display:flex;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+  }
+  .modes .tick{
+    flex:1;
+    text-align:center;
+    padding:10px 2px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-dim);
+    border-right:1px solid var(--rule);
+  }
+  .modes .tick:last-child{border-right:none;}
+  .modes .tick.active{color:var(--accent); font-weight:500;}
+  /* ---------- Sections ---------- */
+  section{border-bottom:1px solid var(--rule);}
+  section.wrap{padding-top:36px; padding-bottom:36px;}
+  section:last-of-type{border-bottom:none;}
+  section h2{font-size:26px; margin-bottom:18px;}
+  section p{margin:0 0 14px; color:var(--ink);}
+  section p:last-child{margin-bottom:0;}
+
+  .logbook-link{
+    display:block;
+    text-align:center;
+    margin-top:16px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:16px;
+  }
+
+  /* ---------- Gear spec list ---------- */
+  .gear{margin-top:22px; display:grid; gap:0;}
+  .gear-row{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:18px;
+    padding:14px 0;
+    border-top:1px solid var(--rule);
+  }
+  .gear-row:last-child{border-bottom:1px solid var(--rule);}
+  .gear-row .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--teal);
+    padding-top:2px;
+  }
+  .gear-row .v{color:var(--ink);}
+  .gear-row .v .sub{color:var(--ink-dim); font-size:14px;}
+
+  /* ---------- Photo grid ---------- */
+  .photos{margin-top:22px; display:grid; grid-template-columns:1.3fr 1fr; gap:20px;}
+  .photo figure{margin:0;}
+  .photo img{width:100%; height:auto; display:block; border:1px solid var(--rule);}
+  .photo figcaption{
+    margin-top:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-dim);
+    line-height:1.5;
+  }
+  @media (max-width:560px){
+    .photos{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Awards ---------- */
+  .awards{margin-top:22px;}
+  .award{
+    display:grid;
+    grid-template-columns:96px 1fr;
+    gap:18px;
+    align-items:start;
+    padding:20px 0;
+    border-top:1px solid var(--rule);
+    position:relative;
+  }
+  .award:last-child{border-bottom:1px solid var(--rule);}
+  .award::before{
+    content:"";
+    position:absolute;
+    left:0; top:20px;
+    width:6px; height:6px;
+    background:var(--accent);
+  }
+  .award img{width:96px; height:auto; border:1px solid var(--rule); display:block;}
+  .award .title{font-family:'Zilla Slab', serif; font-weight:600; font-size:16px; color:var(--ink); margin-bottom:4px;}
+  .award .meta{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--teal);}
+  @media (max-width:480px){
+    .award{grid-template-columns:64px 1fr;}
+    .award img{width:64px;}
+  }
+
+  footer{
+    padding:36px 0 56px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-dim);
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap hero">
+
+<p class="tagline"><strong>You can call me Brandon </strong></p> 
+
+  <div class="hero-media">
+    <img class="portrait" src="https://www.qrz.com/hampages/wb4cs/age_2026_03_20_at_5_19_47_PM_PNG.jpg" alt="Brandon, WB4CS">
+    <div class="on-air">
+      <iframe src="https://logbook.wb4cs.net/index.php/widgets/on_air/4d739860ff?nojs=1&text_size=2" width="600" height="250" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>
+  <div class="logbook-link"><a href="https://logbook.wb4cs.net/index.php/visitor/wb4cs" target="_blank">Click Here to View My Full Logbook Online</a></div>
+
+  <p class="tagline">Licensed since 1995 · Previous calls: KE4UMG &amp; KT4EB </p>
+  <p class="loc">HUNTSVILLE, ALABAMA · EM64SS</p>
+
+  <div class="band-scale">
+    <div class="label">ACTIVE ON THESE BANDS</div>
+    <div class="track">
+      <div class="tick active">40m</div>
+	  <div class="tick active">30m</div>
+      <div class="tick active">20m</div>
+      <div class="tick active">17m</div>
+      <div class="tick active">15m</div>
+      <div class="tick active">12m</div>
+      <div class="tick active">10m</div>
+	  <div class="tick active">6m</div>
+      <div class="tick active">2m</div>
+      <div class="tick active">70cm</div>
+    </div>
+  </div>
+  <div class="modes">
+    <div class="label">ACTIVE ON THESE MODES</div>
+    <div class="track">
+      <div class="tick active">CW</div>
+	  <div class="tick active">SSB Voice</div>
+      <div class="tick active">FM Voice</div>
+      <div class="tick active">FT8/FT4</div>
+      <div class="tick active">FreeDV Voice</div>
+    </div>
+  </div>
+</div>
+
+<section class="wrap">
+  <h2>About me</h2>
+  <p>I've been around radio and RF for most of my life. When I was a kid, my parents gave me a shortwave radio as a Christmas gift and that got me interested in radio. I got my ham license when I was 15 years old. In my mid-20's I briefly worked in Broadcast radio as an on-air personality and assistant-to-the-engineer. The pay was terrible, and I only stayed for a couple of years, but it was a great experience. </p>
+  <p>Primarily active on HF, occasionally up on VHF/UHF for local chats. I enjoy chasing DX, CW, contesting, and a good long conversation when the bands are holding up.</p>
+  <p>Professionally I'm a Network Engineer — I support the routing, switching, wireless, and fiber connections for my organization. That carries over into the hobby: I self-host my own applications at home, including <a href="https://www.wavelog.org/">Wavelog</a> for logging.</p>
+</section>
+
+<section class="wrap">
+  <h2>The station</h2>
+  <p><strong>I QSL only with LoTW and QRZ.</strong> Contacts upload automatically to both every two hours. I don't use paper QSL cards — if you send me one, I'll hang it on the wall and appreciate it, but I won't be able to send one back. I miss the days of paper cards too.</p>
+  <p>I share the station with my YL, Cindy, <a href="https://www.qrz.com/db/K4SYD">K4SYD</a>. 
+
+  <div class="gear">
+    <div class="gear-row">
+      <div class="k">HF</div>
+      <div class="v">Yaesu FT-DX10 <span class="sub">— 100W Barefoot.</span></div>
+    </div>
+    <div class="gear-row">
+      <div class="k">ANTENNA</div>
+      <div class="v">DX Commander Signature 9<span class="sub">— covers 40m-6m. Really impressed with this antenna. A little noisy, as all verticals are, but if I can hear 'em, I can work 'em.</span></div>
+    </div>
+    <div class="gear-row">
+      <div class="k">CW</div>
+      <div class="v">Vibroplex Vibro-Keyer<span class="sub">— Vintage 1969 single-paddle key, one of the best hamfest finds I've ever come across.</span></div>
+    </div>
+    <div class="gear-row">
+      <div class="k">2M/70CM</div>
+      <div class="v">Kenwood TM-V71 and Diamond X50 Antenna <span class="sub">— Yaesu FTM-150 mobile in the van. Usually scanning the Huntsville-area repeaters and 146.520.</span></div>
+    </div>
+    <div class="gear-row">
+      <div class="k">AUDIO</div>
+      <div class="v">Electro-Voice RE20 Mic<span class="sub">- Mic feeds a Midas MR18 digital mixer for EQ and compression, routed to all radios in the shack.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Shack &amp; Antenna</h2>
+  <div class="photos">
+    <div class="photo">
+      <figure>
+        <img src="https://www.qrz.com/hampages/wb4cs/IMG_1865_jpeg.jpg" alt="WB4CS corner shack">
+        <figcaption>The "corner shack" — set up in the corner of the dining and kitchen area. Picture's a little outdated now; the 2m/70cm radio, CW keys, and clutter have all changed since.</figcaption>
+      </figure>
+    </div>
+    <div class="photo">
+      <figure>
+        <img src="https://www.qrz.com/hampages/wb4cs/antenna_jpeg.jpg" alt="DX Commander Signature 9 inverted-L">
+        <figcaption>DX Commander Signature 9</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Awards &amp; Certificates</h2>
+  <div class="awards">
+    <div class="award">
+      <img src="https://www.qrz.com/hampages/wb4cs/WB4CS_CQWW_2025_SSB_certificate.png" alt="CQWW 2025 SSB certificate">
+      <div>
+        <div class="title">CQWW 2025, SSB</div>
+        <div class="meta">17TH PLACE · W4 CALL AREA · USA</div>
+      </div>
+    </div>
+    <div class="award">
+      <img src="https://www.qrz.com/hampages/wb4cs/WB4CS_AW405_Award_Score.jpg" alt="WWA January 2026 award score">
+      <div>
+        <div class="title">WWA, January 2026</div>
+        <div class="meta">73RD PLACE · US MIXED (SSB / CW / DIGITAL)</div>
+      </div>
+    </div>
+    <div class="award">
+      <img src="https://www.qrz.com/hampages/wb4cs/certgen.jpg" alt="ARRL DX 2026 certificate">
+      <div>
+        <div class="title">ARRL DX 2026</div>
+        <div class="meta">1ST PLACE ALABAMA · 4TH PLACE SOUTHERN DIVISION</div>
+      </div>
+    </div>
+    <div class="award">
+      <img src="https://www.qrz.com/hampages/wb4cs/WB4CS_CQWPX_2026_SSB_certificate.png" alt="CQWPX 2026 SSB certificate">
+      <div>
+        <div class="title">CQ WPX 2026, SSB</div>
+        <div class="meta">20TH PLACE · 4TH CALL DISTRICT · SINGLE OP / LOW POWER</div>
+      </div>
+    </div>
+    <div class="award">
+      <img src="https://www.qrz.com/hampages/wb4cs/certgen_1_.jpg" alt="ARRL 10 Meter Contest 2025 certificate">
+      <div>
+        <div class="title">ARRL 10 Meter Contest 2025</div>
+        <div class="meta">2ND PLACE ALABAMA · OPERATED WITH K4SYD</div>
+      </div>
+    </div>
+    <div class="award">
+      <img src="https://www.qrz.com/hampages/wb4cs/certgen_2_.jpg" alt="ARRL Sweepstakes 2025 certificate">
+      <div>
+        <div class="title">ARRL Sweepstakes 2025</div>
+        <div class="meta">3RD PLACE ALABAMA · SINGLE OP / LOW POWER</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  73 de WB4CS — Huntsville, AL
+</footer>
+
+</body>
+</html>
