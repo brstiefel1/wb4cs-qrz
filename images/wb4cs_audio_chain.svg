@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" font-family="'IBM Plex Sans', 'Liberation Sans', 'DejaVu Sans', Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#93a7ba"/>
+    </marker>
+    <marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e8a33d"/>
+    </marker>
+    <marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5fb3a3"/>
+    </marker>
+    <style>
+      .box { fill:#122438; stroke:#24405a; stroke-width:1.5; }
+      .t { fill:#eef2f5; font-size:16px; font-weight:600; }
+      .s { fill:#93a7ba; font-size:12.5px; }
+      .lane { font-family:'IBM Plex Mono','Liberation Mono','DejaVu Sans Mono',monospace; font-size:12px; letter-spacing:1.5px; font-weight:600; }
+      .hf { stroke:#e8a33d; stroke-width:2.2; fill:none; }
+      .vu { stroke:#5fb3a3; stroke-width:2.2; fill:none; }
+      .mn { stroke:#93a7ba; stroke-width:2.2; fill:none; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="640" fill="#0d1b2a"/>
+
+  <!-- title -->
+  <text x="30" y="46" font-family="'IBM Plex Mono','Liberation Mono','DejaVu Sans Mono',monospace" font-size="26" font-weight="600" fill="#eef2f5">WB4CS  <tspan fill="#93a7ba" font-size="18" font-weight="500">STATION AUDIO CHAIN</tspan></text>
+  <text x="30" y="72" class="s" font-size="13.5">One microphone, two radios — each path processed separately for its mode.</text>
+
+  <!-- mixer group -->
+  <rect x="198" y="100" width="614" height="420" rx="12" fill="none" stroke="#24405a" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="214" y="124" class="lane" fill="#93a7ba">MIDAS MR18 DIGITAL MIXER</text>
+  <text x="796" y="124" class="s" font-size="11.5" text-anchor="end">Profiles: Ragchew · DX · Recording</text>
+
+  <!-- lane labels -->
+  <text x="420" y="150" class="lane" fill="#e8a33d">HF · SSB</text>
+  <text x="420" y="390" class="lane" fill="#5fb3a3">VHF/UHF · FM</text>
+
+  <!-- MIC -->
+  <rect x="30" y="268" width="150" height="94" rx="10" class="box"/>
+  <text x="105" y="300" class="t" text-anchor="middle">Electro-Voice</text>
+  <text x="105" y="320" class="t" text-anchor="middle">RE20</text>
+  <text x="105" y="343" class="s" text-anchor="middle">Dynamic broadcast mic</text>
+
+  <!-- MR18 input -->
+  <rect x="215" y="268" width="170" height="94" rx="10" class="box"/>
+  <text x="300" y="296" class="t" text-anchor="middle">Mic Input</text>
+  <text x="300" y="318" class="s" text-anchor="middle">Preamp · Low cut</text>
+  <text x="300" y="336" class="s" text-anchor="middle">Expander gate</text>
+
+  <!-- HF lane -->
+  <rect x="420" y="160" width="170" height="94" rx="10" class="box"/>
+  <text x="505" y="188" class="t" text-anchor="middle">Channel EQ + Comp</text>
+  <text x="505" y="210" class="s" text-anchor="middle">4-band parametric EQ</text>
+  <text x="505" y="228" class="s" text-anchor="middle">Compressor</text>
+
+  <rect x="625" y="160" width="170" height="94" rx="10" class="box"/>
+  <text x="710" y="188" class="t" text-anchor="middle">Main L/R Bus</text>
+  <text x="710" y="210" class="s" text-anchor="middle">Aural exciter</text>
+  <text x="710" y="228" class="s" text-anchor="middle">Peak limiter</text>
+
+  <rect x="840" y="160" width="140" height="94" rx="10" class="box"/>
+  <text x="910" y="188" class="t" text-anchor="middle">40 dB Pad</text>
+  <text x="910" y="210" class="s" text-anchor="middle">XLR → Yaesu</text>
+  <text x="910" y="228" class="s" text-anchor="middle">8-pin modular</text>
+
+  <rect x="1015" y="160" width="160" height="94" rx="10" fill="#122438" stroke="#e8a33d" stroke-width="2"/>
+  <text x="1095" y="188" class="t" text-anchor="middle">Yaesu FTDX10</text>
+  <text x="1095" y="210" class="s" text-anchor="middle">HF transceiver</text>
+  <text x="1095" y="228" class="s" text-anchor="middle">SSB · AM · FM</text>
+
+  <!-- VHF lane -->
+  <rect x="420" y="400" width="170" height="94" rx="10" class="box"/>
+  <text x="505" y="428" class="t" text-anchor="middle">Aux Bus (pre-EQ)</text>
+  <text x="505" y="450" class="s" text-anchor="middle">6-band parametric EQ</text>
+  <text x="505" y="468" class="s" text-anchor="middle">Gentle FM compressor</text>
+
+  <rect x="625" y="400" width="170" height="94" rx="10" class="box"/>
+  <text x="710" y="428" class="t" text-anchor="middle">Bus Insert</text>
+  <text x="710" y="450" class="s" text-anchor="middle">Aural exciter</text>
+  <text x="710" y="468" class="s" text-anchor="middle">for FM clarity</text>
+
+  <rect x="840" y="400" width="140" height="94" rx="10" class="box"/>
+  <text x="910" y="428" class="t" text-anchor="middle">30 dB Pad</text>
+  <text x="910" y="450" class="s" text-anchor="middle">XLR → Kenwood</text>
+  <text x="910" y="468" class="s" text-anchor="middle">8-pin modular</text>
+
+  <rect x="1015" y="400" width="160" height="94" rx="10" fill="#122438" stroke="#5fb3a3" stroke-width="2"/>
+  <text x="1095" y="428" class="t" text-anchor="middle">Kenwood TM-V71A</text>
+  <text x="1095" y="450" class="s" text-anchor="middle">Dual-band mobile</text>
+  <text x="1095" y="468" class="s" text-anchor="middle">2 m · 70 cm FM</text>
+
+  <!-- PC -->
+  <rect x="215" y="548" width="170" height="70" rx="10" class="box" stroke-dasharray="5 4"/>
+  <text x="300" y="574" class="t" text-anchor="middle" font-size="15">PC (USB audio)</text>
+  <text x="300" y="596" class="s" text-anchor="middle">Playback · Recording</text>
+
+  <!-- connectors -->
+  <path d="M180,315 H213" class="mn" marker-end="url(#arr)"/>
+  <path d="M385,315 H402 V207 H418" class="hf" marker-end="url(#arrA)"/>
+  <path d="M402,315 V447 H418" class="vu" marker-end="url(#arrT)"/>
+  <path d="M590,207 H623" class="hf" marker-end="url(#arrA)"/>
+  <path d="M795,207 H838" class="hf" marker-end="url(#arrA)"/>
+  <path d="M980,207 H1013" class="hf" marker-end="url(#arrA)"/>
+  <path d="M590,447 H623" class="vu" marker-end="url(#arrT)"/>
+  <path d="M795,447 H838" class="vu" marker-end="url(#arrT)"/>
+  <path d="M980,447 H1013" class="vu" marker-end="url(#arrT)"/>
+  <path d="M300,546 V364" class="mn" stroke-dasharray="5 4" marker-start="url(#arr)" marker-end="url(#arr)"/>
+
+  <!-- footer -->
+  <text x="1175" y="620" class="s" font-size="11.5" text-anchor="end">Each radio gets its own EQ, compression and effects, tuned for SSB or FM.</text>
+</svg>
